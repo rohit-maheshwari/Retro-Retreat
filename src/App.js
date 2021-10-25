@@ -1,23 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState, useEffect } from "react";
+
+// Components
+import News from "./components/News";
+import Button from "./components/Button/index";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home/";
+import Chat from "./components/Chat";
+
+// Styles
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
+  const [isHome, setIsHome] = useState(true);
+  const [isNews, setIsNews] = useState(false);
+  const [isChat, setIsChat] = useState(false);
+
+  const goNews = (e) => {
+    console.log(isNews);
+    setIsNews(true);
+    setIsHome(false);
+    setIsChat(false);
+  };
+
+  const goHome = (e) => {
+    console.log(isHome);
+    setIsNews(false);
+    setIsHome(true);
+    setIsChat(false);
+  };
+
+  const goChat = (e) => {
+    console.log(isChat);
+    setIsNews(false);
+    setIsHome(false);
+    setIsChat(true);
+  };
+
+  const handleGame = (e) => {
+    setIsNews(false);
+    setIsHome(false);
+    setIsChat(false);
+  };
+
+  document.title = "Retro Retreat";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar
+        buttons={[
+          {
+            text: "Home",
+            callback: goHome,
+          },
+          {
+            text: "News",
+            callback: goNews,
+          },
+          {
+            text: "Chat",
+            callback: goChat,
+          },
+        ]}
+      />
+      <div style={{ padding: "20px" }}></div>
+      {isNews && <News />}
+      {isHome && <Home />}
+      {isChat && <Chat callback={handleGame} />}
+      <GlobalStyle />
     </div>
   );
 }
