@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Retro Retreat
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation 
+
+Run `npm install` to install all dependencies required for the application.
+
 
 ## Available Scripts
 
