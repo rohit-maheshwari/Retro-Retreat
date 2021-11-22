@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
     text-align: center;
   }
 
-  img {
-    display: block;
+  section img {
+    size: 50rem;
     margin-right: auto;
     margin-left: auto;
   }

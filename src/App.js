@@ -5,41 +5,41 @@ import { useState, useEffect } from "react";
 import News from "./components/News";
 import Button from "./components/Button/index";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home/";
-import Chat from "./components/Chat";
+import Goals from "./components/Goals";
+import Background from "./components/InitialBackground";
 
 // Styles
 import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
-  const [isHome, setIsHome] = useState(true);
+  const [isGoals, setIsGoals] = useState(true);
   const [isNews, setIsNews] = useState(false);
   const [isChat, setIsChat] = useState(false);
 
   const goNews = (e) => {
     console.log(isNews);
     setIsNews(true);
-    setIsHome(false);
+    setIsGoals(false);
     setIsChat(false);
   };
 
-  const goHome = (e) => {
-    console.log(isHome);
+  const goGoals = (e) => {
+    console.log(isGoals);
     setIsNews(false);
-    setIsHome(true);
+    setIsGoals(true);
     setIsChat(false);
   };
 
   const goChat = (e) => {
     console.log(isChat);
     setIsNews(false);
-    setIsHome(false);
+    setIsGoals(false);
     setIsChat(true);
   };
 
   const handleGame = (e) => {
     setIsNews(false);
-    setIsHome(false);
+    setIsGoals(false);
     setIsChat(false);
   };
 
@@ -50,8 +50,8 @@ function App() {
       <Navbar
         buttons={[
           {
-            text: "Home",
-            callback: goHome,
+            text: "Goals",
+            callback: goGoals,
           },
           {
             text: "News",
@@ -63,10 +63,9 @@ function App() {
           },
         ]}
       />
-      <div style={{ padding: "20px" }}></div>
-      {isNews && <News />}
-      {isHome && <Home />}
-      {isChat && <Chat callback={handleGame} />}
+      <Background />
+      {isNews && <News />} 
+      {isGoals && <Goals />}
       <GlobalStyle />
     </div>
   );

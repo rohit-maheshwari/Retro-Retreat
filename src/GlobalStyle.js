@@ -27,8 +27,9 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    background-color: white;
     /* background-image: url('https://st4.depositphotos.com/4072575/i/600/depositphotos_201168982-stock-photo-deep-grey-paper-texture-simple.jpg'); */
-    background-image: url('https://www.textures.com/system/gallery/photos/Paper/Crumpled/38226/PaperCrumpled0004_1_350.jpg');
+    /* background-image: url('https://www.textures.com/system/gallery/photos/Paper/Crumpled/38226/PaperCrumpled0004_1_350.jpg'); */
     background-size: auto 15%;
     
     h1 {

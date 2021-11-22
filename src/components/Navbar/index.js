@@ -9,9 +9,9 @@ import { Wrapper } from "./Navbar.styles";
 const Navbar = ({ buttons }) => {
   return (
     <Wrapper>
-      {buttons.map((button) => {
+      {buttons.map((button, index) => {
         console.log(button.callback);
-        return <Button text={button.text} callback={button.callback} />;
+        return <Button key={index} text={button.text} callback={button.callback} />;
       })}
     </Wrapper>
   );

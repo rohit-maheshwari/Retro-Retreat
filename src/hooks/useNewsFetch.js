@@ -10,14 +10,14 @@ const initialState = {
 };
 
 export const useNewsFetch = () => {
-  const [category, setCategory] = useState("");
+  const [searchTerm, setSearchTerm] = useState("UN-GOALS");
   const [state, setState] = useState(initialState);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const fetchNews = async (category = "", page) => {
+  const fetchNews = async (searchTerm, pageSize) => {
     try {
-      const news = await API.fetchNews(category, page);
+      const news = await API.fetchNews(searchTerm, pageSize);
 
       setState((prev) => ({
         ...prev,
@@ -31,8 +31,8 @@ export const useNewsFetch = () => {
   // Initial load
   useEffect(() => {
     setState(initialState);
-    fetchNews(category, 1);
-  }, [category]);
+    fetchNews(searchTerm, 20);
+  }, [searchTerm]);
 
-  return { state, loading, error, category, setCategory };
+  return { state, loading, error, searchTerm, setSearchTerm };
 };
