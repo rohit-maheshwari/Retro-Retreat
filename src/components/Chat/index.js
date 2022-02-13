@@ -100,7 +100,7 @@ function ChatRoom({ callback2 }) {
   };
 
   return (
-    <>
+    <div id = "chat-div">
       <main>
         {messages &&
           messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
@@ -119,7 +119,7 @@ function ChatRoom({ callback2 }) {
           Send
         </button>
       </form>
-    </>
+    </div>
   );
 }
 

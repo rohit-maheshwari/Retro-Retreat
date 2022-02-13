@@ -63,7 +63,6 @@ function App() {
           },
         ]}
       />
-      <div style={{ padding: "20px" }}></div>
       {isNews && <News />}
       {isHome && <Home />}
       {isChat && <Chat callback={handleGame} />}

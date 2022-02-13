@@ -55,5 +55,9 @@ export const GlobalStyle = createGlobalStyle`
     img {
       width:75%;
     }
+
+    .home {
+      width: 10%;
+    }
   }
 `;

@@ -2,7 +2,7 @@
 
 const API_URL = "https://newsapi.org/v2/";
 const API_KEY =
-  "1ee91e7479a64c8a942c20e8deaab50b"; /*process.env.REACT_APP_API_KEY*/
+  "e665a7fb47ce47bf800d711aba8d7795"; /*process.env.REACT_APP_API_KEY*/
 
 const POPULAR_BASE_URL = `${API_URL}top-headlines?country=us`;
 // For login and voting
